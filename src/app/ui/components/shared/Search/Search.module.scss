@@ -1,0 +1,43 @@
+@import '../../../css/utils/index.scss';
+
+.search {
+    position: relative;
+    flex-shrink: 0;
+    width: 380px;
+
+    @include is-screen-max($breakpoint-lg) {
+        width: 280px;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        width: 100%;
+    }
+
+    .icon {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+
+        @include is-screen-max($breakpoint-lg) {
+            left: 15px;
+        }
+    }
+
+    .input {
+        width: 100%;
+        padding: 15px 30px 15px 65px;
+        border: none;
+        border-radius: 30px;
+        background-color: #ffffff;
+        font-size: 15px;
+        line-height: 24px;
+        color: #73737b;
+        outline: none;
+
+        @include is-screen-max($breakpoint-lg) {
+            padding: 10px 10px 10px 40px;
+        }
+    }
+}

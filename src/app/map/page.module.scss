@@ -1,0 +1,63 @@
+@import '../ui/css/utils/index.scss';
+
+.container {
+    margin-bottom: -200px;
+    padding-top: 75px;
+    background-color: #ffffff;
+
+    @include is-screen-max($breakpoint-sm) {
+        padding-top: 40px;
+        padding-bottom: 10px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        margin-bottom: 0;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: 35px 0;
+        padding: 0;
+        list-style: none;
+
+        @include is-screen-max($breakpoint-md) {
+            gap: 20px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            margin: 10px 0 20px;
+        }
+
+        li {
+            font-size: 21px;
+            line-height: 30px;
+            color: $color-secondary-dark;
+
+            @include is-screen-max($breakpoint-md) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .image {
+        margin-top: -25px;
+
+        @include is-screen-max($breakpoint-sm) {
+            width: calc(100% + 30px);
+            max-width: initial;
+            margin: 0 -15px;
+        }
+    }
+}
+
+.download {
+    align-self: center !important;
+    margin-top: 30px;
+}

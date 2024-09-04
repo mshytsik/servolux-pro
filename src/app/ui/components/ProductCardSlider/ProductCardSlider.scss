@@ -1,0 +1,58 @@
+@import '../../css/utils/index.scss';
+
+.products-slider {
+    position: relative;
+
+    & > .splide__track {
+        @include is-screen-min($breakpoint-sm) {
+            width: calc(100% + 80px);
+            margin: -40px;
+            padding: 40px !important;
+        }
+
+        & > .splide__list {
+            @include is-screen-max($breakpoint-sm) {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    }
+
+    .splide {
+        &__arrow {
+            position: absolute;
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 28px;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            transition: opacity 0.3s;
+            z-index: 20;
+            cursor: pointer;
+
+            &:hover {
+                @include is-screen-min($breakpoint-sm) {
+                    opacity: 0.6;
+                }
+            }
+
+            &--prev {
+                left: -20px;
+                transform: translate(-100%, -50%);
+            }
+
+            &--next {
+                right: -20px;
+                transform: translate(100%, -50%);
+
+                img {
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+}

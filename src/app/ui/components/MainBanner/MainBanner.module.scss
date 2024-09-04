@@ -1,0 +1,78 @@
+@import '../../css/utils/index.scss';
+
+.banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 935px;
+    padding: 115px 0;
+
+    @include is-screen-max($breakpoint-lg) {
+        min-height: 800px;
+        padding: 100px 0;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        justify-content: flex-start;
+        min-height: 460px;
+        padding: 95px 0;
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: initial;
+        max-height: initial;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 20px;
+        }
+    }
+
+    .title {
+        font-weight: 800;
+        font-size: 70px;
+        line-height: 86px;
+        color: #ffffff;
+        text-transform: uppercase;
+
+        @include is-screen-max($breakpoint-lg) {
+            font-size: 60px;
+            line-height: 70px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+
+    &.isSearch {
+        min-height: 600px;
+
+        @include is-screen-max($breakpoint-sm) {
+            min-height: 300px;
+        }
+
+        .search {
+            width: 100%;
+
+            @include is-screen-min($breakpoint-md) {
+                display: none;
+            }
+        }
+    }
+}

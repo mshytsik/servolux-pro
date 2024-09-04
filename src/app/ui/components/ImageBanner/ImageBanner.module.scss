@@ -1,0 +1,192 @@
+@import '../../css/utils/index.scss';
+
+.banner {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+
+    @include is-screen-max($breakpoint-sm) {
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .row {
+        @include is-screen-max($breakpoint-sm) {
+            row-gap: 0;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        gap: 25px;
+        padding: 75px 0 90px;
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 12px;
+            padding: 40px 0 50px;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 26px;
+            color: #14334c;
+
+            @include is-screen-max($breakpoint-sm) {
+                font-size: 13px;
+                line-height: 21px;
+            }
+
+            a {
+                font-weight: 700;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                text-decoration-thickness: 1px;
+                transition: opacity 0.3s;
+
+                &:hover {
+                    @include is-screen-min($breakpoint-sm) {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+    }
+
+    .image {
+        position: relative;
+
+        img {
+            max-width: initial;
+            max-height: initial;
+        }
+    }
+
+    &.isImageInline {
+        @include is-screen-max($breakpoint-sm) {
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .content {
+            gap: 30px;
+            padding-top: 90px;
+
+            @include is-screen-max($breakpoint-sm) {
+                gap: 16px;
+                padding-top: 30px;
+                padding-bottom: 40px;
+                border-radius: 30px;
+            }
+
+            .title {
+                color: #ffffff;
+            }
+
+            .description {
+                color: #ffffff;
+
+                @include is-screen-min($breakpoint-sm) {
+                    line-height: 30px;
+                }
+            }
+        }
+
+        .image {
+            height: 100%;
+            margin-left: 24px;
+
+            @include is-screen-min(1772px) {
+                width: calc(100% + (100vw - 1652px) / 2);
+            }
+
+            @include is-screen-max(1772px) {
+                width: calc(100% + 60px);
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                margin-left: 0;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                width: calc(100% + 40px);
+                height: 200px;
+                margin: 0 -20px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+                object-fit: cover;
+                overflow: hidden;
+
+                @include is-screen-max($breakpoint-sm) {
+                    border-radius: 0;
+                }
+            }
+        }
+    }
+
+    &:not(.isImageInline) {
+        @include is-screen-max($breakpoint-sm) {
+            margin-bottom: 180px;
+        }
+
+        .image {
+            img {
+                position: absolute;
+                top: -115px;
+                left: -50px;
+                height: 760px;
+
+                @include is-screen-max($breakpoint-lg) {
+                    top: -50px;
+                    left: -20px;
+                    height: 700px;
+                }
+
+                @include is-screen-max($breakpoint-sm) {
+                    right: -45px;
+                    left: initial;
+                    top: initial;
+                    bottom: -160px;
+                    height: 210px;
+                }
+
+                &.isLarge {
+                    top: -90px;
+                    height: 880px;
+
+                    @include is-screen-max($breakpoint-lg) {
+                        top: -50px;
+                        height: 700px;
+                    }
+
+                    @include is-screen-max($breakpoint-sm) {
+                        right: -70px;
+                        top: initial;
+                        bottom: -180px;
+                        height: 230px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.isDark {
+        background-color: $color-secondary-dark;
+
+        .content {
+            .title {
+                color: #ffffff;
+            }
+
+            .description {
+                color: #ffffff;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import '../../ui/css/utils/index.scss';
+
+.accordions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 40px;
+    z-index: 10;
+
+    @include is-screen-max($breakpoint-md) {
+        margin-left: 0;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        margin-top: 0;
+    }
+
+    .accordion {
+        &:not(:last-child) {
+            border-bottom: 1px solid #cccccc;
+        }
+    }
+}
+
+.download {
+    align-self: center !important;
+    margin-top: 30px;
+}

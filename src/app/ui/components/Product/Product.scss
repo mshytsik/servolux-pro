@@ -1,0 +1,17 @@
+@import '../../css/utils/index.scss';
+
+.product {
+    &-slider {
+        padding: 0 !important;
+
+        .splide {
+            &__pagination {
+                bottom: 32px !important;
+
+                @include is-screen-max($breakpoint-sm) {
+                    bottom: 0 !important;
+                }
+            }
+        }
+    }
+}

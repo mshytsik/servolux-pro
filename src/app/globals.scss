@@ -1,0 +1,127 @@
+@import './ui/css/utils/index';
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    img,
+    svg {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        user-select: none;
+
+        path {
+            transition: fill 0.3s;
+        }
+    }
+
+    iframe,
+    video {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        border: none;
+    }
+
+    a {
+        display: inline-block;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .hide {
+        @include is-screen-min($breakpoint-sm) {
+            &-desktop {
+                display: none !important;
+            }
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            &-mobile {
+                display: none !important;
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            width: 1652px;
+            max-width: calc(100% - 120px);
+
+            @include is-screen-max($breakpoint-sm) {
+                max-width: calc(100% - 40px);
+            }
+        }
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 44px;
+
+        @include is-screen-max($breakpoint-md) {
+            gap: 20px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 10px;
+        }
+
+        & > .col {
+            &-0 {
+                display: none !important;
+            }
+
+            @for $i from 1 through 12 {
+                &-#{$i} {
+                    grid-column: span #{$i};
+                }
+            }
+
+            $sizes: 'xl' $breakpoint-xl, 'lg' $breakpoint-lg,
+                'md' $breakpoint-md, 'sm' $breakpoint-sm, 'xs' $breakpoint-xs;
+            @each $size, $breakpoint in $sizes {
+                @include is-screen-max($breakpoint) {
+                    &-#{$size}-0 {
+                        display: none !important;
+                    }
+
+                    @for $i from 1 through 12 {
+                        &-#{$size}-#{$i} {
+                            grid-column: span #{$i};
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

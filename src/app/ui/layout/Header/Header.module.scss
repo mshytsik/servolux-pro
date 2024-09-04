@@ -1,0 +1,81 @@
+@import '../../css/utils/index.scss';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100px;
+    transition: background-color 0.3s;
+    z-index: 1200;
+
+    @include is-screen-max($breakpoint-sm) {
+        min-height: 60px;
+    }
+
+    &.hasBackground {
+        background-color: $color-secondary-dark;
+    }
+
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .burgerIcon {
+        cursor: pointer;
+
+        @include is-screen-min($breakpoint-sm) {
+            display: none;
+        }
+    }
+
+    .logo {
+        margin-right: 50px;
+        flex-shrink: 0;
+        transition: opacity 0.3s;
+        order: -1;
+
+        @include is-screen-max($breakpoint-lg) {
+            margin-right: 0;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            order: initial;
+
+            img {
+                width: 120px;
+            }
+        }
+
+        &:hover {
+            @include is-screen-min($breakpoint-sm) {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .menu {
+        @include is-screen-max($breakpoint-sm) {
+            display: none;
+        }
+    }
+
+    .search {
+        @include is-screen-max($breakpoint-md) {
+            display: none;
+        }
+    }
+
+    .searchIcon {
+        cursor: pointer;
+
+        @include is-screen-min($breakpoint-md) {
+            display: none;
+        }
+    }
+}

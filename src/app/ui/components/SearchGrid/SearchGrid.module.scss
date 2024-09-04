@@ -1,0 +1,18 @@
+@import '../../css/utils/index.scss';
+
+.grid {
+    margin-top: 50px;
+
+    @include is-screen-max($breakpoint-sm) {
+        margin-top: 20px;
+    }
+}
+
+.notFound {
+    margin-top: 150px;
+    text-align: center;
+
+    @include is-screen-max($breakpoint-sm) {
+        margin-top: 50px;
+    }
+}

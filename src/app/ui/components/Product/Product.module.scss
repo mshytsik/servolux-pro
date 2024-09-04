@@ -1,0 +1,294 @@
+@import '../../css/utils/index.scss';
+
+.container {
+    position: relative;
+    border-radius: 30px;
+    background-color: #ffffff;
+
+    @include is-screen-max($breakpoint-md) {
+        margin-bottom: 410px;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        width: calc(100% + 40px);
+        margin: 0 -20px 280px;
+    }
+
+    .sliderColumn {
+        padding-left: 25px;
+
+        @include is-screen-max($breakpoint-lg) {
+            padding-left: 0;
+        }
+
+        @include is-screen-max($breakpoint-md) {
+            padding: 20px 20px 0;
+        }
+
+        @include is-screen-max($breakpoint-md) {
+            padding-bottom: 10px;
+        }
+
+        .slider {
+            height: 500px;
+
+            @include is-screen-max($breakpoint-md) {
+                height: 300px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                height: 175px;
+            }
+        }
+    }
+
+    .infoColumn {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 55px 55px 55px 0;
+        z-index: 10;
+
+        @include is-screen-max($breakpoint-lg) {
+            padding-right: 20px;
+        }
+
+        @include is-screen-max($breakpoint-md) {
+            padding: 0 20px 65px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 16px;
+        }
+
+        .head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px 20px;
+
+            @include is-screen-max($breakpoint-sm) {
+                row-gap: 5px;
+            }
+
+            .label {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+
+                img {
+                    height: 24px;
+
+                    @include is-screen-max($breakpoint-sm) {
+                        height: 17px;
+                    }
+                }
+
+                span {
+                    font-size: 16px;
+                    line-height: 100%;
+                    letter-spacing: 0.03em;
+                    text-transform: uppercase;
+                    color: #6ebeff;
+
+                    @include is-screen-max($breakpoint-sm) {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-secondary-dark;
+
+            @include is-screen-max($breakpoint-sm) {
+                margin-top: 5px;
+                font-size: 13px;
+                line-height: 21px;
+            }
+        }
+
+        .weight {
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-secondary-dark;
+
+            @include is-screen-max($breakpoint-sm) {
+                font-size: 13px;
+                line-height: 21px;
+            }
+
+            span {
+                font-weight: 800;
+                font-size: 20px;
+                text-transform: uppercase;
+
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .meta {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @include is-screen-max($breakpoint-sm) {
+                gap: 16px;
+            }
+
+            .metaLabel {
+                font-weight: 800;
+                font-size: 20px;
+                line-height: 26px;
+                color: $color-secondary-dark;
+                text-transform: uppercase;
+
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 16px;
+                    line-height: 21px;
+                }
+            }
+
+            .metaList {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px 0;
+                padding: 0;
+                list-style: none;
+
+                @include is-screen-max($breakpoint-sm) {
+                    justify-content: center;
+                }
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 120px;
+                    min-height: 54px;
+                    padding: 0 10px;
+
+                    @include is-screen-max($breakpoint-lg) {
+                        min-width: 90px;
+                    }
+
+                    &:not(:last-child) {
+                        border-right: 1px solid #cccccc;
+                    }
+
+                    .metaValue {
+                        font-weight: 800;
+                        font-size: 22px;
+                        line-height: 27px;
+                        color: $color-secondary;
+                        text-align: center;
+
+                        @include is-screen-min-max(
+                            $breakpoint-sm,
+                            $breakpoint-lg
+                        ) {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+
+                    .metaName {
+                        font-size: 16px;
+                        line-height: 23px;
+                        color: $color-secondary;
+                        text-align: center;
+
+                        @include is-screen-max($breakpoint-lg) {
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+
+                        @include is-screen-max($breakpoint-sm) {
+                            font-size: 13px;
+                            line-height: 23px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .documentsRow {
+            row-gap: 0;
+            margin-top: 60px;
+
+            @include is-screen-max($breakpoint-lg) {
+                margin-top: 40px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                margin-top: 10px;
+            }
+
+            .documents {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px 20px;
+
+                @include is-screen-max($breakpoint-sm) {
+                    justify-content: center;
+                    gap: 15px;
+                }
+
+                .document {
+                    @include is-screen-min-max($breakpoint-sm, $breakpoint-lg) {
+                        padding: 9px 19px;
+                    }
+
+                    span {
+                        @include is-screen-min($breakpoint-sm) {
+                            text-transform: initial;
+                        }
+
+                        @include is-screen-min-max(
+                            $breakpoint-sm,
+                            $breakpoint-lg
+                        ) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .dish {
+                position: relative;
+                z-index: -1;
+
+                img {
+                    position: absolute;
+                    top: -160px;
+                    left: 0;
+                    height: 785px;
+                    max-width: initial;
+                    max-height: initial;
+
+                    @include is-screen-max($breakpoint-lg) {
+                        top: -80px;
+                        height: 700px;
+                    }
+
+                    @include is-screen-max($breakpoint-md) {
+                        top: calc(100% + 20px);
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 450px;
+                    }
+
+                    @include is-screen-max($breakpoint-sm) {
+                        height: 280px;
+                    }
+                }
+            }
+        }
+    }
+}

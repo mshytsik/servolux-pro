@@ -1,0 +1,42 @@
+@import '../../../css/utils/index.scss';
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+    padding: 0;
+    margin: 70px 0 30px;
+    list-style: none;
+
+    @include is-screen-max($breakpoint-sm) {
+        margin: 20px 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        line-height: 18px;
+        color: $color-secondary;
+
+        @include is-screen-max($breakpoint-sm) {
+            font-size: 13px;
+        }
+
+        a {
+            color: inherit;
+            transition: color 0.3s;
+
+            &:hover {
+                @include is-screen-min($breakpoint-sm) {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        p {
+            font-weight: 800;
+        }
+    }
+}

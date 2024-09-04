@@ -1,0 +1,76 @@
+@import './ui/css/utils/index.scss';
+
+.cards {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 150px;
+
+    @include is-screen-max($breakpoint-sm) {
+        margin-top: 0;
+        margin-bottom: 65px;
+    }
+
+    .cardsTitle {
+        margin-bottom: 50px;
+
+        @include is-screen-max($breakpoint-sm) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .cardsButton {
+        align-self: center;
+        margin-top: 25px;
+    }
+}
+
+.notFound {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-bottom: -200px;
+
+    @include is-screen-max($breakpoint-sm) {
+        margin-bottom: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        overflow: hidden;
+    }
+
+    .image {
+        max-width: initial;
+        max-height: initial;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 100px 0;
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 20px;
+            padding: 50px 0;
+        }
+
+        .title {
+            font-size: 140px;
+            line-height: 100%;
+            text-align: center;
+            color: #ffffff;
+
+            @include is-screen-max($breakpoint-sm) {
+                font-size: 100px;
+            }
+        }
+
+        .button {
+            align-self: center;
+        }
+    }
+}

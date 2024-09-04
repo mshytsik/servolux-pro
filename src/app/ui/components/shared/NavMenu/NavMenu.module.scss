@@ -1,0 +1,46 @@
+@import '../../../css/utils/index.scss';
+
+.navmenu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 60px;
+    padding: 0;
+    list-style: none;
+
+    @include is-screen-max($breakpoint-lg) {
+        column-gap: 30px;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    li {
+        a {
+            padding: 5px 0;
+            font-size: 18px;
+            line-height: 20px;
+            color: #ffffff;
+            transition: color 0.3s;
+
+            @include is-screen-max($breakpoint-md) {
+                font-size: 16px;
+                line-height: 18px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                padding: 4px 0;
+                font-size: 18px;
+                line-height: 100%;
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-sm) {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}

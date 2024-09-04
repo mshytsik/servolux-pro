@@ -1,0 +1,54 @@
+@import '../../css/utils/index.scss';
+
+.product-slider {
+    .splide {
+        &__list {
+            display: flex !important;
+        }
+
+        &__pagination {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            padding: 0;
+            list-style: none;
+
+            @include is-screen-max($breakpoint-sm) {
+                gap: 3px;
+            }
+
+            li {
+                display: flex;
+            }
+
+            &__page {
+                width: 8px;
+                height: 8px;
+                padding: 0;
+                border: none;
+                border-radius: 50%;
+                background-color: #d9d9d9;
+                transition: background-color 0.3s;
+                cursor: pointer;
+
+                @include is-screen-max($breakpoint-sm) {
+                    width: 5px;
+                    height: 5px;
+                }
+
+                &:hover {
+                    @include is-screen-min($breakpoint-sm) {
+                        background-color: #286699;
+                    }
+                }
+
+                &.is-active {
+                    background-color: #286699;
+                }
+            }
+        }
+    }
+}

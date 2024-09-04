@@ -1,0 +1,76 @@
+@import '../../../css/utils/index.scss';
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 20px 25px 0;
+        transition: opacity 0.3s;
+        cursor: pointer;
+
+        @include is-screen-max($breakpoint-sm) {
+            padding: 20px 0;
+        }
+
+        &:hover {
+            @include is-screen-min($breakpoint-sm) {
+                opacity: 0.6;
+            }
+        }
+
+        .label {
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 26px;
+            letter-spacing: 0.03em;
+            color: $color-secondary;
+            text-transform: uppercase;
+
+            @include is-screen-max($breakpoint-sm) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+
+        img {
+            flex-shrink: 0;
+            width: 14px;
+            transform: rotate(-90deg);
+            transition: transform 0.3s;
+
+            @include is-screen-max($breakpoint-sm) {
+                width: 11px;
+            }
+
+            &.open {
+                transform: rotate(-90deg) scaleX(-1);
+            }
+        }
+    }
+
+    .body {
+        transition: height 0.3s;
+        overflow: hidden;
+
+        .bodyContent {
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+            padding-bottom: 20px;
+            font-size: 16px;
+            line-height: 26px;
+            color: #14334c;
+
+            @include is-screen-max($breakpoint-sm) {
+                row-gap: 15px;
+                padding-bottom: 25px;
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import '../../css/utils/index.scss';
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background-color: $color-secondary-dark;
+    transition: transform 0.3s;
+    z-index: 600;
+
+    @include is-screen-min($breakpoint-sm) {
+        display: none;
+    }
+
+    &.isMenuActive {
+        transform: none;
+    }
+
+    .head {
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        .closeIcon {
+            position: absolute;
+            top: -5px;
+            left: 5px;
+            padding: 5px;
+            cursor: pointer;
+
+            img {
+                width: 15px;
+            }
+        }
+
+        .logo {
+            width: 120px;
+        }
+    }
+
+    .menu {
+        margin-top: 45px;
+    }
+}

@@ -1,0 +1,93 @@
+@import '../../css/utils/index.scss';
+
+.footer {
+    display: flex;
+    align-items: center;
+    min-height: 175px;
+    padding: 50px 0;
+    background-color: $color-secondary-dark;
+
+    @include is-screen-max($breakpoint-sm) {
+        min-height: 0;
+        padding: 0 0 20px;
+        background-color: transparent;
+    }
+
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px 30px;
+
+        @include is-screen-max($breakpoint-md) {
+            align-items: flex-start;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .info {
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px 30px;
+
+        @include is-screen-max($breakpoint-md) {
+            flex-direction: column;
+        }
+
+        .logo {
+            transition: opacity 0.3s;
+
+            @include is-screen-max($breakpoint-sm) {
+                display: none;
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-sm) {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        .copyright {
+            font-size: 15px;
+            line-height: 26px;
+            color: #a0a5bc;
+        }
+    }
+
+    .menu {
+        @include is-screen-min($breakpoint-sm) {
+            flex: 1 1 auto;
+            justify-content: flex-end;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 40px;
+
+            li {
+                &:first-child {
+                    display: none;
+                }
+
+                a {
+                    @include is-screen-max($breakpoint-sm) {
+                        padding: 3px 0;
+                        font-weight: 800;
+                        font-size: 13px;
+                        line-height: 20px;
+                        color: $color-secondary-dark;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
